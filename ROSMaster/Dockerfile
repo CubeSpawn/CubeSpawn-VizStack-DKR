@@ -3,7 +3,9 @@ FROM ros:indigo-ros-core
 
 RUN apt-get update && apt-get install -y \
     python-pip \
-    && rm -rf /var/lib/apt/lists
+
+RUN apt-get clean && 
+    rm -rf /var/lib/apt/lists
 
 ENV PYTHONUNBUFFERED 1
 
