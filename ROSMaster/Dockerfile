@@ -1,21 +1,17 @@
 FROM ros:indigo-ros-core
+ENV PYTHONUNBUFFERED 1
+
 # add pip
 
 RUN apt-get update && apt-get install -y \
     python-pip \
 
-RUN apt-get clean && 
-    rm -rf /var/lib/apt/lists
-
-ENV PYTHONUNBUFFERED 1
+&& rm -rf /var/lib/apt/lists/* \
 
 # Add code folder
 
-RUN mkdir /cubespawn
-WORKDIR /cubespawn
-
-ADD requirements.txt /cubespawn/
-
+mkdir /cubespawn/
+WORKDIR /cubespawn/
+COPY requirements.txt /cubespawn/requirements.txt
 RUN pip install -r requirements.txt
-
-ADD . /cubespawn/
+COPY . /cubespawn/
