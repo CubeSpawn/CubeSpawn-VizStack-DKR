@@ -1,0 +1,12 @@
+
+Rviz relevant
+http://gernotklingler.com/blog/howto-get-hardware-accelerated-opengl-support-docker/
+
+
+printer components
+http://pyserial.readthedocs.io/en/latest/pyserial.html
+
+
+CubeSpawn Swarm
+blog.hypriot.com/getting-started-with-docker-and-linux-on-the-raspberry-pi/
+http://sudomakesense.blogspot.com/2015/10/docker-on-beaglebone-black.html
