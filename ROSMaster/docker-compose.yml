@@ -1,0 +1,20 @@
+version: '2'
+services:
+  master:
+    image: master
+    environment:
+      -  ROS_HOSTNAME=master
+    ports:
+      -  "11311:11311"
+    command: roscore
+
+  rviz:
+    image: vizcore
+    environment:
+      -  ROS_HOSTNAME=rviz
+      -  ROS_MASTER_URI=http://master:11311
+    command: rosrun rviz rviz
+    depends_on:
+      -  master
+    links:
+      -  master
